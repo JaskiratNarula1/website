@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFORMANALYZER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4169e1; /* Royal Blue */
+            color: #fff;
+            scroll-behaviour: smooth;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #273be2; /* Darker Royal Blue */
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 0.5em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+        }
+        nav a.active {
+            background-color: #1d2ec9;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+        section {
+            margin: 2em 0;
+            padding-top: 60px; /* Offset for sticky nav */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .button {
+            background-color: #273be2;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #1d2ec9;
+        }
+        .feature {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5em;
+        }
+        .card {
+            background-color: white;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1em;
+            width: 300px;
+            height: 200px;
+            text-align: left;
+            color: #333;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .card h3 {
+            color: #4169e1;
+        }
+        .metricdescription {
+            background-color: antiquewhite;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1em;
+            height: 150px;
+            text-align: center;
+            color: #333;
+        }
+        .about {
+            background-color: antiquewhite;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1em;
+            text-align: center;
+            color: #333;
+        }
+        .integration-container {
+            margin: 2em auto;
+            padding: 1em;
+            text-align: center;
+            background-color: #e8f5e9;
+            border: 2px solid #273be2;
+            border-radius: 8px;
+        }
+        .integration-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+        .contact-details {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1.5em;
+            margin: 1em auto;
+            max-width: 500px;
+            text-align: center;
+            color: #333;
+        }
+        .contact-details a {
+            color: #273be2;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            margin: 2em 0;
+        }
+        .team-member {
+            text-align: center;
+            max-width: 200px;
+        }
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 0%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .team-member img:hover {
+            transform: scale(1.1);
+        }
+        .team-member h4 {
+            margin: 0.5em 0;
+        }
+        .animated-section {
+            background-color: #f9f9f9;
+            padding: 2em;
+            margin: 2em auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+            color: #333;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .logo {
+            height: 50px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<script src="https://widget.cxgenie.ai/widget.js" data-aid="c704cd23-21fe-43cf-b008-d261d354e0aa" data-lang="en"></script>
+<body>
+
+<header>
+    <h1>PERFORMANALYZER</h1>
+    <p>Innovative solutions to boost profits and improve employee performance</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="PERFORMANALYZER Logo" class="logo">
+</header>
+
+<nav>
+    <a href="#features">Features</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#integration">Data Metrics</a>
+    <a href="#team">Our Team</a>
+    <a href="#Contact-us">Contact us</a>
+</nav>
+
+<main>
+    <section id="features">
+        <h2>Our Features</h2>
+        <div class="feature">
+            <div class="card">
+                <h3>Sales Optimization</h3>
+                <p>Discover strategies and tools to maximize your revenue and reach your sales goals.</p>
+            </div>
+            <div class="card">
+                <h3>Employee Efficiency</h3>
+                <p>Empower your team with productivity-enhancing tools and tailored insights.</p>
+            </div>
+            <div class="card">
+                <h3>AI-Powered Insights</h3>
+                <p>Leverage AI to gain actionable recommendations for business growth.</p>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about">
+        <p>
+            At PerformAnalyzer, we are committed to revolutionizing how businesses achieve success. By harnessing the power of advanced AI technology and data-driven insights, we help companies optimize sales strategies, enhance workforce performance, and unlock their true potential. Our platform empowers decision-makers with actionable recommendations, detailed metrics, and visual analytics to make informed choices that drive growth and efficiency. Whether you're a small startup or an established enterprise, PerformAnalyzer is your trusted partner in navigating challenges, improving productivity, and achieving sustainable success.
+        </p>
+        </div>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="feature">
+            <div class="card">
+                <h3>Consulting</h3>
+                <p>Get expert advice tailored to your business needs to drive growth and efficiency.</p>
+            </div>
+            <div class="card">
+                <h3>Training Programs</h3>
+                <p>Equip your team with skills to adapt and excel in today’s competitive market.</p>
+            </div>
+            <div class="card">
+                <h3>Data Analytics</h3>
+                <p>Utilize comprehensive analytics to make data-driven decisions for your business.</p>
+            </div>
+        </div>
+    </section>
+    <section id="integration">
+        <h2>Data Metrics Integration</h2>
+        <div class="integration-container">
+            <p>Access detailed metrics and insights for your business data:</p>
+            <iframe src="https://predictor-git-main-jaskiratnarula1s-projects.vercel.app/"></iframe>
+        </div>
+        <section id="metric" class="metricdescription">
+            <div>
+                <h3>What role do these metrics play in bettering your business?</h3>
+                <p>By analyzing sales data through key metrics like MAE, RMSE, and MSE, coupled with visual trends, businesses can gain a deeper understanding of their performance, accurately forecast future sales, identify patterns or anomalies, and make well-informed decisions to optimize operations, minimize risks, improve resource allocation, and capitalize on growth opportunities effectively.</p>
+            </div>
+        </section>
+        <section id="metric" class="metricdescription">
+            <div>
+                <h3>What do these plots and graphs explain?</h3>
+                <p>The plot compares Actual Sales (with markers) and Predicted Sales (with a dashed line). A close match between the two lines indicates the model is accurately forecasting sales, while significant divergence suggests the model's predictions need improvement. This visualization helps businesses evaluate the accuracy of their sales predictions.</p>
+            </div>
+        </section>
+    </section>
+    <section id="team">
+        <h2>Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="https://github.com/JaskiratNarula1/images/blob/main/20250125_212555%20(1).jpg?raw=true" alt="Jaskirat Singh Narula">
+                <h4>Jaskirat Singh Narula</h4>
+                <p>Team Leader</p>
+            </div>
+            <div class="team-member">
+                <img src="https://raw.githubusercontent.com/JaskiratNarula1/images/refs/heads/main/IMG-20250129-WA0014.jpg" alt="Vibhor Madhav Verma">
+                <h4>Vibhor Madhav Verma</h4>
+                <p>Team Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="https://github.com/JaskiratNarula1/images/blob/main/IMG-20250126-WA0012.jpg?raw=true" alt="Parth">
+                <h4>Parth</h4>
+                <p>Team Member</p>
+            </div>
+            <div class="team-member">
+                <img src="https://github.com/JaskiratNarula1/images/blob/main/pixelcut-export%20(1).jpeg?raw=true" alt="Ujjawal">
+                <h4>Ujjawal</h4>
+                <p>Team Member</p>
+            </div>
+            <div class="team-member">
+                <img src="https://github.com/JaskiratNarula1/images/blob/main/IMG-20250130-WA0001.jpg?raw=true" alt="Rahul Kumar">
+                <h4>Rahul Kumar</h4>
+                <p>Team Member</p>
+            </div>
+        </div>
+    </section>
+    <section id="Contact-us">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+            <h3>Contact Information</h3>
+            <h4>Team Leader</h4>
+            <p><strong>Jaskirat Singh Narula</strong></p>
+            <p>Phone: <a href="tel:+919149125693">9149125693</a></p>
+            <p>Email: <a href="mailto:jaskirat.narula007@gmail.com">jaskirat.narula007@gmail.com</a></p>
+        </div>
+        <div class="contact-details">
+            <h4>Team Members</h4>
+            <p><strong>Vibhor Madhav Verma</strong></p>
+            <p>Phone: <a href="tel:+919412071046">9412071046</a></p>
+            <p><strong>Parth</strong></p>
+            <p>Phone: <a href="tel:+919119719161">9119719161</a></p>
+            <p><strong>Ujjawal</strong></p>
+            <p>Phone: <a href="tel:+919058247398">9058247398</a></p>
+            <p><strong>Rahul Kumar</strong></p>
+            <p>Phone: <a href="tel:+918445416346">8445416346</a></p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 PERFORMANALYZER. All rights reserved.</p>
+</footer>
+
+<script>
+    // Highlight the active section in the navigation menu
+    const navLinks = document.querySelectorAll("nav a");
+
+    function setActiveLink() {
+        const fromTop = window.scrollY;
+        navLinks.forEach(link => {
+            const section = document.querySelector(link.hash);
+            if (
+                section.offsetTop <= fromTop + 70 &&
+                section.offsetTop + section.offsetHeight > fromTop + 70
+            ) {
+                navLinks.forEach(link => link.classList.remove("active"));
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", setActiveLink);
+</script>
+
+</body>
+</html>
